@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: black;
+    color: var(--Primary-text_color);
+    border-radius: 1em;
+
+}
+
+.poke-detail {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+
+}
+
+.titre-detail {
+    background-color: azure;
+    padding: 2em;
+    text-align: center;
+    
+}
+
+.poke-detail > button {
+    padding: 1em;
+    color: cyan;
+    background-color: black;
+}
+
+.poke-detail > button:hover {
+    background-color: black;
+    color: var(--Primary-text_color);
+}

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --Primary-text_color:  rgb(249, 249, 249) ;
+    --Secondary-text_color: Blue;
+
+    
+}
