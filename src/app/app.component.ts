@@ -15,16 +15,28 @@ export class AppComponent {
   
   name = signal('Pikachu') ;
   taille = computed(() => {
+
+    if(this.life() == 10 ) {
+      return 'Low'
+    }
+
     if (this.life()<= 15 ) {
-      // window.prompt('Petit');
+
       return 'Petit';
 
     }
+
+    if(this.life() == 30) {
+      return 'Max'
+    }
+    
 
     if (this.life() >= 25 ) {
       // window.prompt('Grand')
       return 'Grand'
     }
+
+
 
     // else {
     //   window.prompt('Moyen');

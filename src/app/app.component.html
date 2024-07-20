@@ -1,4 +1,4 @@
-
+<!Doctype Html>
 
 <h1>
     Pokerun
@@ -19,7 +19,7 @@
 
         </div>
     </div>
-    <button (click)="incrementLife()" >+</button>
-    <button (click)="decrementLife()" >-</button>
+    <button (click)="incrementLife()" [disabled]="life() >= 30 " >+</button>
+    <button (click)="decrementLife()" [disabled]="life() <= 10 " >-</button>
     
 </div>
