@@ -8,13 +8,16 @@
 
 <div class="poke-detail">
     <div class="titre-detail">
-        <h2>
-            {{name}}
-            
-        </h2>
+        <div class="pokemon-image">
+            <img [src]="imageUrl()" alt="Pikachu">
+        </div>
 
-        <p>PV : {{life}}</p>
+        <div class="pokemon-caracteristique">
+            <h2>Nom : {{name ()}}</h2>
+            <h3>Taille : {{taille()}}</h3>
+            <p>PV : {{life ()}}</p>
 
+        </div>
     </div>
     <button (click)="incrementLife()" >+</button>
     <button (click)="decrementLife()" >-</button>
