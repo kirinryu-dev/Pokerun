@@ -1,5 +1,7 @@
 import { signal , Component, computed } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
+import { POKEMON_LIST } from './pokemon-list.fake';
+import { Pokemon } from './pokemon.model';
 
 @Component({
   selector: 'app-root',
@@ -11,58 +13,31 @@ import { signal , Component, computed } from '@angular/core';
 
 export class AppComponent {
 
-  imageUrl = signal('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png');
-  
-  name = signal('Pikachu') ;
-  taille = computed(() => {
+  pokemonList = signal(POKEMON_LIST);
 
-    if(this.life() == 10 ) {
-      return 'Low'
-    }
-
-    if (this.life()<= 15 ) {
-
-      return 'Petit';
-
-    }
-
-    if(this.life() == 30) {
-      return 'Max'
-    }
-    
-
-    if (this.life() >= 25 ) {
-      // window.prompt('Grand')
-      return 'Grand'
-    }
-
-
-
-    // else {
-    //   window.prompt('Moyen');
-
-    // }
-
-    return 'Moyen';
-
-  })
-  life = signal(22) ;
-
-
-  incrementLife () {
-    console.log('+1 point de vie !');
-
-    this.life.update( (n) => n + 1);
+ size(pokemon: Pokemon ){
+  if(pokemon.life <= 15){
+    return 'low health';
 
   }
-  
-  
-  decrementLife () {
-    console.log('-1 point de vie !');
 
-    this.life.update( (n) => n - 1 ) ;
+  if(pokemon.life >= 25){
+    return 'hight health';
 
   }
+
+  return 'moyen';
+}
+
+// pokemn life control task 
+incrementLife(pokemon: Pokemon) {
+  pokemon.life = pokemon.life + 1 ;
+
+}
+
+decrementLife(pokemon: Pokemon) {
+  pokemon.life = pokemon.life - 1 ;
+}
 
 }
 
